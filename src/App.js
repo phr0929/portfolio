@@ -50,7 +50,7 @@ const App =  (()=> {
     {title:'곱빼기 웹사이트 제작',content:'서산시 배달앱 곱빼기 사이트 반응형으로 제작',tool:[ps,html,css,js],link:['https://pulse.wo.tc/Double'],img:port2},
     {title:'서산개백수 포트폴리오 제작',content:'유튜브 컨텐츠로 제작한 아이템들을 모아놓는 사이트 반응형으로 제작',tool:[ps,ai,html,css,js],link:['https://phr0929.github.io/'],img:port3},
     {title:'곱빼기 앱 개발',content:'서산시 배달앱 곱빼기 프론트엔드 개발 / 디자인',tool:[ps,ai,html,css,js],link:['https://play.google.com/store/apps/details?id=tc.wo.pulse.community','https://apps.apple.com/kr/app/%EA%B3%B1%EB%B9%BC%EA%B8%B0/id1621478258'],img:port4},
-    {title:'삼량이 캐릭터 창작',content:'고양이 캐릭터 삼량이 창작 / 인스타그램 운영',tool:[ps,ai,html,css,js],link:['https://instagram.com/discontent.cat'],img:port5}
+    {title:'삼량이 캐릭터 창작',content:'고양이 캐릭터 삼량이 창작 / 인스타그램 운영',tool:[ps,ai,clip,pro],link:['https://instagram.com/discontent.cat'],img:port5}
   ])
   const [pageNumber,setPageNumber] = useState(0)
   const [swiper,setSwiper] = useState(null)
@@ -103,7 +103,7 @@ const App =  (()=> {
 
         <Swiper     
         onSwiper = {setSwiper}
-        style={{top:0,left:0,width:'100%',height:'100%'}} 
+        style={{top:0,left:0,width:'100%',height:'calc(100% - 70px)'}} 
             direction='vertical' 
             speed={1000}
             mousewheel= {true}
@@ -130,7 +130,7 @@ const App =  (()=> {
   
                   <div style={{ boxSizing:'border-box',height:'100%',width:'100vw',display:'flex',alignItems:'center',
                     justifyContent:'center',flexDirection:'column',overflow:'hidden',}}>
-                      <div style={{height:'calc(100% - 70px)',width:'100%',paddingLeft:20,boxSizing:'border-box',
+                      <div style={{height:'calc(100% - 90px)',width:'100%',paddingLeft:20,boxSizing:'border-box',
                       justifyContent:'center',alignItems:'center',display:'flex',flexDirection:'column',}}>
                         <div style={{position:'relative',width:'100%',maxWidth:1300,display:'flex',
                         alignItems:'center',justifyContent:'center'}}>
@@ -149,7 +149,7 @@ const App =  (()=> {
                     
 
                       <div style={{display:'flex',justifyContent:'flex-start',width:'100%',maxWidth:1300,height:70,minHeight:70,maxHeight:70,
-                      alignItems:'center',paddingLeft:20,paddingBottom:20,boxSizing:'border-box',}}>
+                      alignItems:'center',paddingLeft:20,marginBottom:20,boxSizing:'border-box',}}>
                         <div className='mouseDown'>
                           <div className='mousePoint'/>
                         </div>
@@ -192,7 +192,7 @@ const App =  (()=> {
                             PULSE
                           </div>
                           <div style={{color:'#5d5d5d',marginTop:10}}>
-                            디자인 총괄
+                            디자인
                           </div>
                           <div style={{color:'#5d5d5d',marginTop:5}}>
                             프론트엔드 개발
@@ -244,37 +244,37 @@ const App =  (()=> {
                       </div>
                       <div style={{display:'flex'}}>
                         <div className='skills'>
-                          <img src={ps} alt=''/>
-                          {/* <div>포토샵</div> */}
+                          <img className='skilsImg' src={ps} alt=''/>
+                          <span>포토샵</span>
                         </div>
                         <div className='skills'>
-                          <img src={ai} alt=''/>
-                          {/* <div>일러스트</div> */}
+                          <img className='skilsImg' src={ai} alt=''/>
+                          <div>일러스트</div>
                         </div>
                         <div className='skills'>
-                          <img src={pro} alt=''/>
-                          {/* <div>프로크리에이트</div> */}
+                          <img className='skilsImg' src={pro} alt=''/>
+                          <div>프로크리에이트</div>
                         </div>
                        
                         <div className='skills'>
-                          <img src={clip} alt=''/>
-                          {/* <div>클립스튜디오</div> */}
+                          <img className='skilsImg' src={clip} alt=''/>
+                          <div>클립스튜디오</div>
                         </div>
                         <div className='skills'>
-                          <img src={js} alt=''/>
-                          {/* <div>자바스크립트</div> */}
+                          <img className='skilsImg' src={js} alt=''/>
+                          <div>자바스크립트</div>
                         </div>
                         <div className='skills'>
-                          <img src={html} alt=''/>
-                          {/* <div>html</div> */}
+                          <img className='skilsImg' src={html} alt=''/>
+                          <div>HTML</div>
                         </div>
                         <div className='skills'>
-                          <img src={css} alt=''/>
-                          {/* <div>css</div> */}
+                          <img className='skilsImg' src={css} alt=''/>
+                          <div>CSS</div>
                         </div>
                         <div className='skills'>
-                          <img src={excel} alt=''/>
-                          {/* <div>엑셀</div> */}
+                          <img className='skilsImg' src={excel} alt=''/>
+                          <div>엑셀</div>
                         </div>
                       </div>                  
                     </div>
@@ -305,8 +305,7 @@ const App =  (()=> {
                           </div>
 
                           <div style={{display:'flex',width:'100%',height:'100%'}}>
-                              <img src={list[portNumber].img} alt='' style={{objectPosition:'top',height:300,width:500,minWidth:500,objectFit:'cover',
-                              borderRadius:10}}/>
+                              <img src={list[portNumber].img} alt='' className='portImg'/>
                               <div style={{width:'100%',display:'flex',flexDirection:'column',paddingLeft:30,height:'100%'}}>
                                 <div style={{fontSize:20,fontWeight:700,marginBottom:10}}>{list[portNumber].title}</div>
                                 <div style={{fontSize:16,marginBottom:20}}>{list[portNumber].content}</div>
@@ -319,14 +318,12 @@ const App =  (()=> {
                                   {list[portNumber].link.length===1?
                                     list[portNumber].link.map((vvval,vvidx)=>
                                     
-                                      <div key={vvidx} style={{padding:10,border:'1px solid #5d5d5d',marginRight:10}} 
-                                      onClick={()=>window.open(vvval)}>
+                                      <div key={vvidx} className='goButton' onClick={()=>window.open(vvval)}>
                                         {portNumber===4?'인스타그램 보러가기':'사이트 바로가기'}</div>
                                     )
                                   :list[portNumber].link.map((vvval,vvidx)=>
                                   
-                                  <div key={vvidx} style={{padding:10,border:'1px solid #5d5d5d',marginRight:10}} 
-                                  onClick={()=>window.open(vvval)}>
+                                  <div key={vvidx} className='goButton' onClick={()=>window.open(vvval)}>
                                     {vvidx===0?'Google Play':'App Store'} 다운로드</div>
                                 )}
                                 </div>
@@ -358,9 +355,11 @@ const App =  (()=> {
 
                      <div style={{display:'flex',alignItems:'center',marginTop:80,width:'90%',justifyContent:'center'}}>
                         {list.map((val,idx)=>
-                          <div style={{width:idx===portNumber?9:6,height:idx===portNumber?9:6,minWidth:idx===portNumber?9:6,backgroundColor:idx===portNumber?'#323232':'#969696',
-                          borderRadius:50,marginRight:10}}>
-
+                          <div onClick={()=>setPortNumber(idx)}
+                          style={{width:9,height:9,paddingRight:5,paddingLeft:5,display:'flex',alignItems:'center',justifyContent:'center'}}>
+                            <div style={{width:idx===portNumber?9:6,height:idx===portNumber?9:6,minWidth:idx===portNumber?9:6,
+                            backgroundColor:idx===portNumber?'#323232':'#969696',
+                          borderRadius:50,}}/>
                           </div>
                         )}
                       </div>
