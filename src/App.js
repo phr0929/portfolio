@@ -14,6 +14,9 @@ import port2 from './resource/port2.jpg'
 import port3 from './resource/port3.jpg'
 import port4 from './resource/port4.jpg'
 import port5 from './resource/port5.jpg'
+import port6 from './resource/port6.jpg'
+import port7 from './resource/port7.jpg'
+import port8 from './resource/port8.jpg'
 import profile from './resource/profile.jpg'
 import SwiperPortfolio from './SwiperPortfolio';
 import back from './resource/back.svg';
@@ -23,6 +26,7 @@ import cancel from './resource/cancel.svg';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {Navigation,Pagination,Scrollbar,Mousewheel,A11y} from "swiper"
 const App =  (()=> {
+
   SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Mousewheel]); // *
 
   const setOneVh = () => {
@@ -48,7 +52,9 @@ const App =  (()=> {
     {title:'곱빼기 웹사이트 제작',content:'서산시 배달앱 곱빼기 사이트 반응형으로 제작',tool:[ps,html,css,js],link:['https://pulse.wo.tc/Double'],img:port2},
     {title:'서산개백수 포트폴리오 제작',content:'유튜브 서산개백수 포트폴리오 사이트 반응형으로 제작',tool:[ps,ai,html,css,js],link:['https://phr0929.github.io/'],img:port3},
     {title:'곱빼기 앱 개발',content:'서산시 배달앱 곱빼기 프론트엔드 개발 / 디자인',tool:[ps,ai,html,css,js],link:['https://play.google.com/store/apps/details?id=tc.wo.pulse.community','https://apps.apple.com/kr/app/%EA%B3%B1%EB%B9%BC%EA%B8%B0/id1621478258'],img:port4},
-    {title:'삼량이 캐릭터 창작',content:'고양이 캐릭터 삼량이 창작 / 인스타그램 운영',tool:[ps,ai,clip,pro],link:['https://instagram.com/discontent.cat'],img:port5}
+    {title:'삼량이 캐릭터 창작',content:'고양이 캐릭터 삼량이 창작 / 인스타그램 운영',tool:[ps,ai,clip,pro],link:['https://instagram.com/discontent.cat'],img:port5},
+    {title:'도담헤어 로고 제작',content:'미용실 도담헤어 로고 디자인',tool:[ps],link:[],img:port6},
+    {title:'곱빼기 로고 제작',content:'서산시 배달앱 곱빼기 로고 디자인',tool:[ai],link:[],img:port7},
   ]
   const [pageNumber,setPageNumber] = useState(0)
   const [swiper,setSwiper] = useState(null)
@@ -58,12 +64,12 @@ const App =  (()=> {
     let number = portNumber
     if(lf==='left'){
       if(number===0){
-        number = 4;   
+        number = 6;   
       }else{
         number = number - 1;
       }
     }else{
-      if(number===4){
+      if(number===6){
        
         number = 0; 
       }else{
@@ -91,13 +97,16 @@ const App =  (()=> {
           <div onClick={()=>swiper.slideTo(1)} className={pageNumber===1?'menuOn':'menuOff'}>ABOUT</div>
           <div onClick={()=>swiper.slideTo(2)} className={pageNumber===2?'menuOn':'menuOff'} style={{width:85}}>PORTFOLIO</div>
         </div>
-        <img onClick={()=>setNavBar(navBar?false:true)} src={nav} alt='' className='nav' />
+        {navBar?
+        <img onClick={()=>setNavBar(navBar?false:true)} src={cancel} alt='' className='nav' />
+        :<img onClick={()=>setNavBar(navBar?false:true)} src={nav} alt='' className='nav' />}
       </div>
-
-      <div className='navMenu' style={{display:navBar?'flex':'none'}}>
-        <div onClick={()=>swiper.slideTo(0)} className={pageNumber===0?'menuOn':'menuOff'}>HOME</div>
-        <div onClick={()=>swiper.slideTo(1)} className={pageNumber===1?'menuOn':'menuOff'}>ABOUT</div>
-        <div onClick={()=>swiper.slideTo(2)} className={pageNumber===2?'menuOn':'menuOff'}>PORTFOLIO</div>
+      <div className='navMenuBar' style={{display:navBar?'flex':'none'}}>
+        <div className='navMenu'>
+          <div onClick={()=>swiper.slideTo(0)} className={pageNumber===0?'menuOn':'menuOff'}>HOME</div>
+          <div onClick={()=>swiper.slideTo(1)} className={pageNumber===1?'menuOn':'menuOff'}>ABOUT</div>
+          <div onClick={()=>swiper.slideTo(2)} className={pageNumber===2?'menuOn':'menuOff'}>PORTFOLIO</div>
+        </div>
       </div>
        
 
@@ -139,7 +148,7 @@ const App =  (()=> {
                     P.HR
                   </span>
                   <div className='electronicDisplay'>
-                    UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer
+                    UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer UI/UX designer
                   </div>
                   {/* <div style={{position:'relative',width:'100%', 
                   display:'flex',alignItems:'center',justifyContent:'center',marginTop:50}}>
@@ -178,10 +187,7 @@ const App =  (()=> {
                         PULSE
                       </span>
                       <div>
-                        디자인
-                      </div>
-                      <div>
-                        프론트엔드 개발
+                        디자인 / 프론트엔드 개발
                       </div>
                     </div>
                   </div>   
@@ -198,19 +204,36 @@ const App =  (()=> {
                     </div>
                     <div className='carrersContents'>
                       <span>
-                        온라인 중고서점 우리아이책더미 운영
+                        온라인 중고서점 우리아이책더미
                       </span>
                       <div>
-                        오픈마켓 yes24, 알라딘 상품등록, 관리
-                      </div>
-                      <div>
-                        상품 검수 / 포장 / 배송
+                        yes24/알라딘 상품등록,관리
                       </div>
                       <div>
                         회계 업무
                       </div>
                     </div>
                   </div>
+                  <div className='carrersLayout'>
+                    <div className='carrersDate'>
+                      2012.08 ~ 2013.04
+                    </div>
+                    <div className='carrersDate2'>
+                      2012.08 ~<br/>2013.04
+                    </div>
+                    <div className='carrersLine'>
+                      <div className='circle'/>
+                      <div className='line'/>
+                    </div>
+                    <div className='carrersContents'>
+                      <span>
+                        신원해피니스
+                      </span>
+                      <div>
+                        디자인
+                      </div>
+                    </div>
+                  </div> 
                   <div className='lastCarrers'>
                     <span/>
                   </div>
@@ -259,7 +282,7 @@ const App =  (()=> {
                 </div>
 
                 <div className='electronicDisplay'>
-                  ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT
+                  ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT
                 </div>
                       
               </div>
@@ -308,7 +331,7 @@ const App =  (()=> {
                   </div>
                 </div>
                 <div className='electronicDisplay'>
-                  PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO
+                  PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO 
                 </div>
               </div>  
             </SwiperSlide> 
