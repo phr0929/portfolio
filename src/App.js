@@ -48,13 +48,14 @@ const App =  (()=> {
   
 
   const list =[
-    {title:'PULSE 웹사이트 제작',content:'소프트웨어 개발업체 PULSE 사이트 반응형으로 제작',tool:[ps,html,css,js],link:['https://pulse.wo.tc/'],img:port1},
-    {title:'곱빼기 웹사이트 제작',content:'서산시 배달앱 곱빼기 사이트 반응형으로 제작',tool:[ps,html,css,js],link:['https://pulse.wo.tc/Double'],img:port2},
-    {title:'서산개백수 포트폴리오 제작',content:'유튜브 서산개백수 포트폴리오 사이트 반응형으로 제작',tool:[ps,ai,html,css,js],link:['https://phr0929.github.io/'],img:port3},
     {title:'곱빼기 앱 개발',content:'서산시 배달앱 곱빼기 프론트엔드 개발 / 디자인',tool:[ps,ai,html,css,js],link:['https://play.google.com/store/apps/details?id=tc.wo.pulse.community','https://apps.apple.com/kr/app/%EA%B3%B1%EB%B9%BC%EA%B8%B0/id1621478258'],img:port4},
+    {title:'곱빼기 웹사이트 제작',content:'서산시 배달앱 곱빼기 사이트 반응형으로 제작',tool:[ps,html,css,js],link:['https://pulse.wo.tc/Double'],img:port2},
+   
+    {title:'PULSE 웹사이트 제작',content:'소프트웨어 개발업체 PULSE 사이트 반응형으로 제작',tool:[ps,html,css,js],link:['https://pulse.wo.tc/'],img:port1},
+    {title:'서산개백수 포트폴리오 제작',content:'유튜브 서산개백수 포트폴리오 사이트 반응형으로 제작',tool:[ps,ai,html,css,js],link:['https://phr0929.github.io/'],img:port3},
     {title:'삼량이 캐릭터 창작',content:'고양이 캐릭터 삼량이 창작 / 인스타그램 운영',tool:[ps,ai,clip,pro],link:['https://instagram.com/discontent.cat'],img:port5},
-    {title:'도담헤어 로고 제작',content:'미용실 도담헤어 로고 디자인',tool:[ps],link:[],img:port6},
-    {title:'곱빼기 로고 제작',content:'서산시 배달앱 곱빼기 로고 디자인',tool:[ai],link:[],img:port7},
+    // {title:'도담헤어 로고 제작',content:'미용실 도담헤어 로고 디자인',tool:[ps],link:[],img:port6},
+    // {title:'곱빼기 로고 제작',content:'서산시 배달앱 곱빼기 로고 디자인',tool:[ai],link:[],img:port7},
   ]
   const [pageNumber,setPageNumber] = useState(0)
   const [swiper,setSwiper] = useState(null)
@@ -64,12 +65,12 @@ const App =  (()=> {
     let number = portNumber
     if(lf==='left'){
       if(number===0){
-        number = 6;   
+        number = 4;   
       }else{
         number = number - 1;
       }
     }else{
-      if(number===6){
+      if(number===4){
        
         number = 0; 
       }else{
