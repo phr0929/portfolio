@@ -358,7 +358,7 @@ const App =  (()=> {
                         2023.11 ~
                       </div>
                       <div className='carrersDate2'>
-                        2012.11 ~<br/>
+                        2023.11 ~<br/>
                       </div> 
                       <div className='carrersLine'>
                         <div className='circle'/>
