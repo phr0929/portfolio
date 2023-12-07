@@ -893,6 +893,23 @@
   object-fit: contain;
 } 
 
+.miriImgLayout img:hover{
+  animation: zoom 0.5s linear  forwards ;
+}
+
+@keyframes zoom{
+  20% {
+     padding: var(--miriImgPadding);
+  }
+  60% {
+     padding: var(--miriImgPadding)/1.5;
+  }
+  100% {
+    padding: 0px;
+  }
+}
+
+
 .dialogLayout {
   caret-color: #00000000;
   position:fixed;

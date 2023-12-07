@@ -189,6 +189,14 @@ const App =  (()=> {
   const [miriDialog,setMiriDialog] = useState(false)
   const [miriDialogImg,setMiriDialogImg] = useState(null)
 
+
+  useEffect(()=>{
+    setNavBar(false)
+  },[pageNumber])
+  const handleSwiper = (idx) => {
+    swiper.slideTo(idx)
+    setNavBar(false)
+  }
   const handleMiriDialog = (src) => {
     setMiriDialog(true)
     setMiriDialogImg(src)
@@ -277,9 +285,9 @@ const App =  (()=> {
         </div>
         <div className='navMenuBar' style={{display:navBar?'flex':'none'}}>
           <div className='navMenu'>
-            <div onClick={()=>swiper.slideTo(0)} className={pageNumber===0?'menuOn':'menuOff'}>HOME</div>
-            <div onClick={()=>swiper.slideTo(1)} className={pageNumber===1?'menuOn':'menuOff'}>ABOUT</div>
-            <div onClick={()=>swiper.slideTo(2)} className={pageNumber>=2?'menuOn':'menuOff'}>PORTFOLIO</div>
+            <div onClick={()=>handleSwiper(0)} className={pageNumber===0?'menuOn':'menuOff'}>HOME</div>
+            <div onClick={()=>handleSwiper(1)} className={pageNumber===1?'menuOn':'menuOff'}>ABOUT</div>
+            <div onClick={()=>handleSwiper(2)} className={pageNumber>=2?'menuOn':'menuOff'}>PORTFOLIO</div>
           </div>
         </div>
         
