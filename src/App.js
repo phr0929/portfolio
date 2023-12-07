@@ -263,7 +263,7 @@ const App =  (()=> {
     return (
       <div className="App mainFont"> 
         <div className='menuBar'> 
-          <div className='logo'>
+          <div className='logo'  onClick={()=>swiper.slideTo(0)}>
             P.HYERIM
           </div>
           <div className='menu'>
