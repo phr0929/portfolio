@@ -36,6 +36,7 @@
     --portTitleMargin2:50px;
     --miriCtgrWidth:140px;
     --dialogImgWidth:500px;
+    --clickIconSize:60px;
   } 
 }
 
@@ -67,6 +68,7 @@
     --portTitleMargin2:20px;
     --miriCtgrWidth:120px;
     --dialogImgWidth:500px;
+    --clickIconSize:60px;
   }
 }
 
@@ -98,6 +100,7 @@
     --portTitleMargin2:20px;
     --miriCtgrWidth:120px;
     --dialogImgWidth:300px;
+    --clickIconSize:35px;
   }
 }
 
@@ -868,20 +871,52 @@
 .miriImgLayout{
   width: 100%;
   height: 100%;
-  max-height: calc(100vh - 400px);
+  max-height: calc(100vh - 250px);
   display: var(--miriImgLayout);
   grid-gap: 20px 0px;
   grid-template-columns: 1fr 1fr 1fr;
   overflow: auto;
 }
- 
- 
+   
+.miriImgLayoutDiv{
+  width: var(--miriImgSize);
+  min-width: var(--miriImgSize);
+  height: var(--miriImgSize);
+  min-height: var(--miriImgSize);
+  margin:0px 10px 0px 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
- 
-
-.miriImgLayout img{
+.miriImgLayoutDivImg{
   cursor: pointer;
   padding: var(--miriImgPadding);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.miriImgLayoutDivImg :hover{
+  animation: zoom 0.5s linear  forwards ;
+}
+
+.clickImg{
+  width: var(--clickIconSize);
+  height: var(--clickIconSize); 
+  position: absolute; 
+  z-index: 1000;
+}
+
+.miriImgLayoutImg{
+  cursor: pointer;
+  /* padding: var(--miriImgPadding); */
   box-sizing: border-box;
   width: var(--miriImgSize);
   min-width: var(--miriImgSize);
@@ -893,8 +928,9 @@
   object-fit: contain;
 } 
 
-.miriImgLayout img:hover{
-  animation: zoom 0.5s linear  forwards ;
+.miriImgLayoutImg:hover{
+  filter: brightness(0.8);
+  /* animation: zoom 0.5s linear  forwards ; */
 }
 
 @keyframes zoom{
